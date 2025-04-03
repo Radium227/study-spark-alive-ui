@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Play, Pause, RotateCcw, Coffee, Volume2, Volume1, VolumeX, Music, Settings } from "lucide-react";
+import { Play, Pause, RotateCcw, Coffee, Volume2, Volume1, VolumeX, Music, Settings, BellRing } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const PomodoroTimer = () => {
@@ -566,7 +565,7 @@ const PomodoroTimer = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
                           {session.type === "focus" ? (
-                            <Zap className="h-4 w-4 text-study-purple mr-2" />
+                            <BellRing className="h-4 w-4 text-study-purple mr-2" />
                           ) : (
                             <Coffee className="h-4 w-4 text-study-blue mr-2" />
                           )}

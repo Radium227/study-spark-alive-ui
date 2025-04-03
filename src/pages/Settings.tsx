@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Bells, Clock, Eye, Moon, Sun, User, Volume2, Lock, Download, BellRing } from "lucide-react";
+import { Bell, Clock, Eye, Moon, Sun, User, Volume2, Lock, Download, BellRing } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Settings = () => {
@@ -26,7 +25,6 @@ const Settings = () => {
   const [dailyGoal, setDailyGoal] = useState(120);
 
   const handleSaveSettings = () => {
-    // In a real app, this would save to backend
     toast({
       title: "Settings saved",
       description: "Your preferences have been updated successfully",
@@ -34,7 +32,6 @@ const Settings = () => {
   };
 
   const handleExportData = () => {
-    // In a real app, this would trigger a data export
     toast({
       title: "Export initiated",
       description: "Your data is being prepared for download",
@@ -60,7 +57,7 @@ const Settings = () => {
               <span>Preferences</span>
             </TabsTrigger>
             <TabsTrigger value="notifications" className="py-2 data-[state=active]:bg-white rounded-md">
-              <Bells className="h-4 w-4 mr-2" />
+              <Bell className="h-4 w-4 mr-2" />
               <span>Notifications</span>
             </TabsTrigger>
             <TabsTrigger value="privacy" className="py-2 data-[state=active]:bg-white rounded-md">
