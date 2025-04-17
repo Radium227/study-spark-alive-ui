@@ -1,7 +1,6 @@
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -39,38 +38,36 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={!isLoggedIn ? <Login onLogin={handleLogin} /> : <Dashboard />} />
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />
-            <Route path="/study-type" element={<StudyType />} />
-            <Route path="/dashboard" element={
-              <MainLayout onLogout={handleLogout}>
-                <Dashboard />
-              </MainLayout>
-            } />
-            <Route path="/pomodoro" element={
-              <MainLayout onLogout={handleLogout}>
-                <PomodoroTimer />
-              </MainLayout>
-            } />
-            <Route path="/tasks" element={
-              <MainLayout onLogout={handleLogout}>
-                <TasksPage />
-              </MainLayout>
-            } />
-            <Route path="/settings" element={
-              <MainLayout onLogout={handleLogout}>
-                <Settings />
-              </MainLayout>
-            } />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={!isLoggedIn ? <Login onLogin={handleLogin} /> : <Dashboard />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/study-type" element={<StudyType />} />
+          <Route path="/dashboard" element={
+            <MainLayout onLogout={handleLogout}>
+              <Dashboard />
+            </MainLayout>
+          } />
+          <Route path="/pomodoro" element={
+            <MainLayout onLogout={handleLogout}>
+              <PomodoroTimer />
+            </MainLayout>
+          } />
+          <Route path="/tasks" element={
+            <MainLayout onLogout={handleLogout}>
+              <TasksPage />
+            </MainLayout>
+          } />
+          <Route path="/settings" element={
+            <MainLayout onLogout={handleLogout}>
+              <Settings />
+            </MainLayout>
+          } />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
